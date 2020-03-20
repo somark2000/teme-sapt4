@@ -69,7 +69,22 @@ int main()
     x[3] = sizeof(a.f4);
     x[4] = sizeof(a.f5);
     x[5] = sizeof(a.f6);
-    int y[] = { 1,2,3,4,5,6 };    char* z[] = { "bool", "char","int","long int","double","long double" };    cout << "a/b";    char a;    cin >> a;    if (a == 'a')    {        bubbleSorta(x, y, 6);    }    else
+    int y[] = { 1,2,3,4,5,6 };
+    char* z[] = { "bool", "char","int","long int","double","long double" };
+    cout << "a/b";
+    char a;
+    cin >> a;
+    if (a == 'a')
+    {
+        bubbleSorta(x, y, 6);
+    }
+    else
     {
         bubbleSortb(x, y, 6);
-    }    for (int i = 0; i < 6; ++i)    {        cout << z[y[i]] << ' ' << x[i] << '/n';    }}
+    }
+    for (int i = 0; i < 6; ++i)
+    {
+        cout << z[y[i]] << ' ' << x[i] << '/n';
+    }
+      cout << sizeof(a);
+}
