@@ -15,8 +15,6 @@ public:
 	void takeout(double m);
 	void add(double m);
 	double howmuch();
-	void history();
-	void save();
 	~Kont();
 		
 private:
@@ -24,6 +22,8 @@ private:
 	MyStruct a[100];
 	int n;
 	ofstream f;
+	void history();
+	void save();
 };
 
 Kont::Kont()
@@ -33,14 +33,14 @@ Kont::Kont()
 	f.open("out.dat");
 }
 
-void Kont::save()
+void Kont::save(double m)
 {
 	if (a[n].in == 0) f << "OUT ";
 	else
 	{
 		f << "IN ";
 	}
-	f << a[n].amount << '\n';
+	f <<m<<' '<< a[n].amount << '\n';
 }
 
 void Kont::add(double m)
