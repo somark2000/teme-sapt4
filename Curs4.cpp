@@ -5,9 +5,9 @@
 #include "Header.h"
 using namespace std;
 
-shape::shape(char n[], float f)
+shape::shape(std::string n, float f)
 {
-	strcpy(this->name, n);
+	this->name= n;
 	this->flache = f;
 }
 
@@ -21,9 +21,9 @@ void shape::setflache(float f)
 	this->flache = f;
 }
 
-void shape::setname(char n[])
+void shape::setname(std::string n)
 {
-	strcpy(this->name, n);
+	this->name=n;
 }
 
 float shape::getflache()
@@ -36,7 +36,8 @@ char* shape::getname()
 	return this->name;
 }
 
-void shape::apply(vector<shape*> v, void (*f))
+void shape::apply(vector<shape*> v, void(f)(shape))
 {
-	f;
+	for (shape* c : v)
+		f(c);
 }
